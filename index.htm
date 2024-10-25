@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DmaComp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .store-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .store-title {
+            font-size: 3.5rem;
+            text-align: center;
+            background: linear-gradient(45deg, #fff, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorShift 5s infinite;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        .product-section, .video-section {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background: #121212;
+            border-radius: 15px;
+            padding: 25px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover {
+            transform: translateZ(15px) rotateY(5deg);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        .product-info {
+            text-align: left;
+            font-size: 1rem;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        .buy-button {
+            background-color: #fff;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        .cursor {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: cursorAnim 0.2s infinite;
+        }
+
+        .line-divider {
+            border-top: 1px solid #888;
+            margin: 50px 0;
+        }
+
+        .video-section {
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .video-row {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .video-frame {
+            width: 100%;
+            max-width: 750px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes colorShift {
+            0%, 100% { color: #fff; }
+            50% { color: #aaa; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes cursorAnim {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="store-container">
+        <h1 class="store-title">Welcome to DmaComp</h1>
+        
+        <!-- Product Section -->
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-section">
+            <div class="product-card" id="firmware">
+                <div class="product-image" style="background-image: url('earn.png');"></div>
+                <h3 class="product-name">Fortnite DMA Firmware</h3>
+                <p class="product-description">
+                    Enhance your Fortnite gaming experience with the latest DMA Firmware, optimized for UD experience. Enjoy.
+                </p>
+                <button class="buy-button">Buy Now</button>
+            </div>
+
+            <div class="product-card" id="dma-kmbox">
+                <div class="product-image" style="background-image: url('DMABUNDLE.PNG');"></div>
+                <h3 class="product-name">DMA + KMBox Bundle</h3>
+                <p class="product-description">
+                    Get the DMA and KMBox bundle for top-tier gaming performance and ultimate customization.
+                </p>
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- DMA Information Section -->
+        <h2 class="section-title">About DMA Technology</h2>
+        <div class="product-info">
+            DMA (Direct Memory Access) This Is A Game Changer For Fortnite. Why You May Be Asking Well This Is One Of The Most UD Firmwares On The Market. Super Easy To Setup. For More Information About This Firmware Or Hardware, Join Our Discord Server.
+        </div>
+
+        <!-- Video Section -->
+        <div class="line-divider"></div>
+        <h2 class="section-title">Video Guides</h2>
+
+        <div class="video-section">
+            <!-- Setup Videos -->
+            <h3 class="video-title">Setup Tutorial</h3>
+            <div class="video-row">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/RZm9zRGtUf0" allowfullscreen></iframe>
+            </div>
+
+            <!-- Gameplay Videos -->
+            <h3 class="video-title">Fortnite Gameplay with DMA</h3>
+            <div class="video-row">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/Hg4j-NdJSdI" allowfullscreen></iframe>
+                <iframe class="video-frame" src="https://www.youtube.com/embed/2hcrynAp4pE" allowfullscreen></iframe>
+            </div>
+            <div class="video-row">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/h8pk5aatmCo" allowfullscreen></iframe>
+                <iframe class="video-frame" src="https://www.youtube.com/embed/t2ea7PPRkCc" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor"></div>
+
+    <script>
+        // Cursor animation
+        document.body.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor');
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+</html>
